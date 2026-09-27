@@ -1,0 +1,52 @@
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: server-monitor-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: server_monitor
+      POSTGRES_USER: monitor
+      POSTGRES_PASSWORD: monitor123
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U monitor -d server_monitor"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  server-monitor:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+
+    container_name: server-monitor
+
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      SERVER_MONITOR_CONFIG: /app/config/config.docker.json
+
+    ports:
+      - "8080:8080"
+
+
+volumes:
+  postgres_data:

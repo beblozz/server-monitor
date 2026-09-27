@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SERVER MONITOR</title>
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <div>
+
+            <h1>SERVER MONITOR</h1>
+
+            <p class="version">
+                SYSTEM MONITORING v1.0
+            </p>
+
+        </div>
+
+        <div class="author">
+            iploxz
+        </div>
+
+    </header>
+
+
+    <!-- SYSTEM STATUS -->
+
+    <section class="panel status-panel">
+
+        <div class="panel-title">
+            SYSTEM STATUS
+        </div>
+
+        <div class="system-status">
+
+            <div class="status-row">
+
+                <span>
+                    SERVER
+                </span>
+
+                <span
+                    id="server-status"
+                    class="status-ok"
+                >
+                    ONLINE
+                </span>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    DATABASE
+                </span>
+
+                <span
+                    id="database-status"
+                    class="status-ok"
+                >
+                    CONNECTED
+                </span>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    CPU
+                </span>
+
+                <span
+                    id="cpu-status"
+                    class="status-ok"
+                >
+                    OK
+                </span>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    MEMORY
+                </span>
+
+                <span
+                    id="memory-status"
+                    class="status-ok"
+                >
+                    OK
+                </span>
+
+            </div>
+
+
+            <div class="status-row">
+
+                <span>
+                    DISK
+                </span>
+
+                <span
+                    id="disk-status"
+                    class="status-ok"
+                >
+                    OK
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CURRENT METRICS -->
+
+    <section class="metrics">
+
+
+        <div class="metric-card">
+
+            <h2>CPU</h2>
+
+            <div
+                id="cpu-value"
+                class="metric-value"
+            >
+                0%
+            </div>
+
+            <div class="progress">
+
+                <div
+                    id="cpu-bar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h2>MEMORY</h2>
+
+            <div
+                id="memory-value"
+                class="metric-value"
+            >
+                0%
+            </div>
+
+            <div class="progress">
+
+                <div
+                    id="memory-bar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h2>DISK</h2>
+
+            <div
+                id="disk-value"
+                class="metric-value"
+            >
+                0%
+            </div>
+
+            <div class="progress">
+
+                <div
+                    id="disk-bar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NETWORK -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            NETWORK
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        INTERFACE
+                    </th>
+
+                    <th>
+                        RECEIVED
+                    </th>
+
+                    <th>
+                        TRANSMITTED
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="network-table">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- PROCESSES -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            PROCESSES
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        PID
+                    </th>
+
+                    <th>
+                        NAME
+                    </th>
+
+                    <th>
+                        CPU
+                    </th>
+
+                    <th>
+                        MEMORY
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="process-table">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- HISTORY -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            HISTORY
+        </div>
+
+        <div class="history-info">
+            LAST 20 RECORDS
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        TIME
+                    </th>
+
+                    <th>
+                        CPU
+                    </th>
+
+                    <th>
+                        MEMORY
+                    </th>
+
+                    <th>
+                        DISK
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="history-table">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- GRAPH -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            PERFORMANCE GRAPH
+        </div>
+
+        <canvas
+            id="history-chart"
+            width="900"
+            height="300"
+        ></canvas>
+
+    </section>
+
+
+    <footer>
+
+        <span>
+            SERVER MONITOR v1.0
+        </span>
+
+        <span>
+            created by <b>iploxz</b>
+        </span>
+
+    </footer>
+
+</div>
+
+
+<script src="/script.js"></script>
+
+</body>
+
+</html>

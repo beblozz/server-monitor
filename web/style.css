@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background: #111111;
+    color: #dddddd;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 1100px;
+    max-width: calc(100% - 40px);
+
+    margin: 0 auto;
+
+    padding: 30px 0 50px;
+}
+
+
+/*
+    HEADER
+*/
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #333333;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    color: #eeeeee;
+}
+
+.version {
+    margin: 7px 0 0;
+
+    font-size: 12px;
+
+    color: #777777;
+
+    letter-spacing: 2px;
+}
+
+.author {
+    font-size: 20px;
+
+    color: #aaaaaa;
+
+    letter-spacing: 1px;
+}
+
+
+/*
+    STATUS
+*/
+
+.status {
+    border: 1px solid #333333;
+
+    padding: 12px 15px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.status-light {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #aaaaaa;
+}
+
+
+/*
+    METRICS
+*/
+
+.metrics {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    border: 1px solid #333333;
+
+    padding: 20px;
+
+    background: #151515;
+}
+
+.metric-card h2 {
+    margin: 0 0 15px;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #999999;
+}
+
+.metric-value {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+    color: #eeeeee;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+
+    background: #292929;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: #bbbbbb;
+
+    transition:
+        width 0.3s;
+}
+
+
+/*
+    PANELS
+*/
+
+.panel {
+    border: 1px solid #333333;
+
+    background: #151515;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+}
+
+.panel-title {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid #333333;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #bbbbbb;
+}
+
+.history-info {
+    padding: 10px 16px;
+
+    font-size: 11px;
+
+    color: #666666;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+/*
+    TABLE
+*/
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #292929;
+
+    font-size: 12px;
+}
+
+th {
+    color: #777777;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+}
+
+td {
+    color: #bbbbbb;
+}
+
+tr:hover {
+    background: #1b1b1b;
+}
+
+
+/*
+    GRAPH
+*/
+
+#history-chart {
+    display: block;
+
+    width: 100%;
+    height: 300px;
+
+    background: #101010;
+}
+
+
+/*
+    FOOTER
+*/
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #333333;
+
+    padding-top: 20px;
+
+    margin-top: 30px;
+
+    font-size: 11px;
+
+    color: #555555;
+
+    letter-spacing: 1px;
+}
+
+footer b {
+    color: #888888;
+}
+
+
+/*
+    MOBILE
+*/
+
+@media (
+    max-width: 700px
+)
+{
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .author {
+        margin-top: 15px;
+    }
+
+    table {
+        font-size: 10px;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+/* SYSTEM STATUS */
+
+.status-panel {
+    margin-bottom: 20px;
+}
+
+.system-status {
+    border-top: 1px solid #333;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+
+    border-bottom: 1px solid #333;
+
+    font-size: 14px;
+}
+
+.status-row span:first-child {
+    color: #aaa;
+}
+
+.status-ok {
+    color: #00ff66;
+
+    font-weight: bold;
+}
+
+.status-warning {
+    color: #ff4444;
+
+    font-weight: bold;
+}

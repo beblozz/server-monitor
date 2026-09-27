@@ -1,0 +1,15 @@
+{
+    "server_port": 8080,
+
+    "monitor_interval": 5,
+
+    "cpu_limit": 80,
+    "memory_limit": 90,
+    "disk_limit": 90,
+
+    "database_host": "postgres",
+    "database_port": 5432,
+    "database_name": "server_monitor",
+    "database_user": "monitor",
+    "database_password": "monitor123"
+}
